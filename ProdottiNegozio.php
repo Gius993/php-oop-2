@@ -8,7 +8,7 @@ class ProdottiNegozio{
 	
 	public $peso;
 
-	public function__construct($_marca, $_prezzo, $_peso){
+	public function __construct($_marca, $_prezzo, $_peso){
 		
 		$this->marca = $_marca;
 		
@@ -18,9 +18,9 @@ class ProdottiNegozio{
 	
 	}
 	
-	// public function getInfo() {
-    //     return "$this->marca  $this->prezzo - Euro: $this->peso  - kg ";
-    // }
+	public function getInfo() {
+        return "$this->marca  $this->prezzo - Euro: $this->peso  - kg ";
+    }
 
 }
 
