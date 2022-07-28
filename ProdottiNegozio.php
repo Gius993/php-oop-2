@@ -19,7 +19,7 @@ class ProdottiNegozio{
 	}
 	
 	public function getInfo() {
-        return "$this->marca  $this->prezzo - Euro: $this->peso  - kg ";
+        return "$this->marca - Prezzo: $this->prezzo Euro $this->prezzo - Peso: $this->peso g ";
     }
 
 }

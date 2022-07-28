@@ -5,7 +5,7 @@
 
 	
 
-	$crocchette_whiskas = new Cibo('whiskas', 2, 10);
+	$crocchette_whiskas = new Cibo('whiskas', 2, 10, 5);
 	var_dump($crocchette_whiskas);
 
 	$pallina_gomma = new Giochi(':DadyPet', 1, 4);
