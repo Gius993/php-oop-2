@@ -8,16 +8,16 @@
 
 		public $saldo = 0;
 
-		protected $prodottiComprati[];
+		protected $prodottiComprati = [];
 
 		public function __construct($_nome, $_email) {
 			$this->nome = $_nome;
 			$this->email = $_email;
 		}
 		//pagamenti
-		public function aggiungiProdotto(){
+		public function aggiungiProdotto($prodotto){
 			
-			$this->$prodottiComprati[] = $prodotto;
+			$this->prodottiComprati[] = $prodotto;
 		}
 		public function getProdottiScelti() {
 			return $this->prodottiScelti;
