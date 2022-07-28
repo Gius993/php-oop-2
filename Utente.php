@@ -25,7 +25,7 @@
 		public function calcolaPrezzoTotale() {
 			
 			$sommaTotale = 0;
-			foreach($this->prodottiScelti as $prodotto) {
+			foreach($this->prodottiComprati as $prodotto) {
 				$sommaTotale += $prodotto->prezzo;
 			}
 	

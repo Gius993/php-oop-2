@@ -30,7 +30,12 @@
 
 	$michele_lelli = new UtenteNonRegistrato('michele lelli', 'michele@email.it');
 	$michele_lelli->aggiungiProdotto($crocchette_whiskas);
-	
+	$michele_lelli->saldo = 1;
+	if($michele_lelli->effettuaPagamento() === 'Pagamento avvenuto'){
+		echo 'Acquisto completato';
+	}else{
+		echo 'il saldo non è sufficiente';
+	}
 	var_dump($michele_lelli);
 
 ?>
