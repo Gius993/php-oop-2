@@ -39,7 +39,7 @@
 			$totaleDaPagare = $this->calcolaPrezzoTotale();
 			
 			if($this->saldo < $totaleDaPagare) {
-				die('Saldo non disponibile');
+				throw new Exception ("Utente: $this->nome: Saldo non disponibile sulla carta");
 			} else {
 				return 'Pagamento avvenuto';
 			}

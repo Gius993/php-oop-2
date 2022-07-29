@@ -1,7 +1,9 @@
 <?php
-
+require_once __DIR__ . '/ProdottoSerie.php';
 class ProdottiNegozio{
 	
+	use ProdottoSerie;
+
 	public $marca;
 	
 	public $prezzo;

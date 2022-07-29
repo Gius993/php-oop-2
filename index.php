@@ -20,23 +20,33 @@
 	$giggi_trottola->aggiungiProdotto($crocchette_whiskas);
 	$giggi_trottola->aggiungiProdotto($pallina_gomma);
 	$giggi_trottola->saldo = 20;
-	if($giggi_trottola->effettuaPagamento() === 'Pagamento avvenuto'){
-		echo 'Acquisto completato';
-	}else{
-		echo 'il saldo non è sufficiente';
+	try{
+
+		if($giggi_trottola->effettuaPagamento() === 'Pagamento avvenuto'){
+			echo '<h2>Acquisto completato<h2>';
+		}
+	}catch(Exception $e){
+		error_log($e->getMessage());
+
+		echo 'Non è stato possibile effettuare questa operazione controllare saldo e riprovare grazie.';
 	}
 
-	var_dump($giggi_trottola);
+	
 
 	$michele_lelli = new UtenteNonRegistrato('michele lelli', 'michele@email.it');
 	$michele_lelli->aggiungiProdotto($crocchette_whiskas);
 	$michele_lelli->saldo = 1;
-	if($michele_lelli->effettuaPagamento() === 'Pagamento avvenuto'){
-		echo 'Acquisto completato';
-	}else{
-		echo 'il saldo non è sufficiente';
+	try{
+
+		if($michele_lelli->effettuaPagamento() === 'Pagamento avvenuto'){
+			echo '<h2>Acquisto completato<h2>';
+		}
+	}catch(Exception $i){
+		error_log($i->getMessage());
+
+		echo 'Non è stato possibile effettuare questa operazione controllare saldo e riprovare grazie.';
 	}
-	var_dump($michele_lelli);
+
 
 ?>
 
@@ -50,35 +60,14 @@
 </head>
 <body>
 	<div>
-		<h1>Cibo</h1>
-		<h2><?php echo $crocchette_whiskas->marca ?></h2>
-		<h2><?php echo $crocchette_whiskas->prezzo ?> Euro</h2>
-		<h2><?php echo $crocchette_whiskas->peso ?> g</h2>
-		<h2><?php echo $crocchette_whiskas->durata ?> mesi</h2>
+
 	</div>
 
 	<div>
-		<h1>Gioco</h1>
-		<h2><?php echo $pallina_gomma->marca ?></h2>
-		<h2><?php echo $pallina_gomma->prezzo ?> Euro</h2>
-		<h2><?php echo $pallina_gomma->peso ?> g</h2>
+		
 		
 	</div>
 
-	<div>
-		<h1>Utente </h1>
-		<p><?php echo $michele_lelli-> nome;?></p>
-		<p><?php echo $michele_lelli-> email;?></p>
-
-	</div>
-
-	<div>
-		<h1>Utente </h1>
-		<p><?php echo $giggi_trottola-> nome;?></p>
-		<p><?php echo $giggi_trottola-> email;?></p>
-		<h2>Sconto</h2>
-		<p><?php echo $giggi_trottola-> sconto;?>%</p>
-	</div>
 
 </body>
 </html>
